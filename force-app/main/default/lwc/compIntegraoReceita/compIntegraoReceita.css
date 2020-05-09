@@ -1,0 +1,6 @@
+.box {
+    flex-direction: column;
+}
+.title {
+    font-weight: bold;
+}

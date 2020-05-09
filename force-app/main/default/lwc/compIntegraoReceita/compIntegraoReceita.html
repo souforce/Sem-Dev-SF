@@ -1,0 +1,31 @@
+<template>
+    <lightning-card>
+        <div class="slds-align_absolute-center">
+            <template if:true={isValidated}>
+                Este CNPJ já foi verificado.
+            </template>
+
+            <template if:false={isValidated}>
+                <template if:false={receitaData}>
+                    <lightning-button label="Consultar CNPJ" variant="brand" onclick={consultarCNPJ}></lightning-button>
+                </template>
+
+                <template if:true={receitaData}>
+                    <div class="box">
+                        <div class="title">CNPJ:</div>
+                        <div>{receitaData.cnpj}</div>
+
+                        <div class="title">Razão Social</div>
+                        <div>{receitaData.nome}</div>
+
+                        <div>
+                            <lightning-button label="Salvar" variant="brand" onclick={salvar}></lightning-button>
+                        </div>
+                    </div>
+
+                </template>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>
